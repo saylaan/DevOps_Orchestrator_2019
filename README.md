@@ -95,7 +95,7 @@ open the poll application into your browser:
     - Traefik dashboard: localhost:30042
 
 tested with:
-kubectl apply -f cadvisor . daemonset . yaml
+```kubectl apply -f cadvisor . daemonset . yaml
 kubectl apply -f postgres . secret . yaml \
                 -f postgres . configmap . yaml \
                 -f postgres . volume . yaml \
@@ -114,6 +114,7 @@ kubectl apply -f poll . deployment . yaml \
 kubectl apply -f traefik . rbac . yaml \
                 -f traefik . deployment . yaml \
                 -f traefik . service . yaml
+```
 
 ## Create database manually after first deploy
 
