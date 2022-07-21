@@ -117,12 +117,15 @@ kubectl apply -f traefik . rbac . yaml \
 
 ## Create database manually after first deploy
 
-echo 'CREATE TABLE votes (id text PRIMARY KEY , vote text NOT NULL );' \
+```echo 'CREATE TABLE votes (id text PRIMARY KEY , vote text NOT NULL );' \
 | kubectl exec -i postgres - deployment -id  -c postgres - container -id  -- psql -U username
+```
 
 ## Adds 2 fake DNS to /etc/ hosts
 
-echo ["$( kubectl get nodes -o jsonpath ='{ $. items [*]. status . addresses [?( @. type =="
-ExternalIP ") ]. address }') poll.dop .io result .dop .io" \| sudo tee -a /etc/ hosts]
+```echo "$( kubectl get nodes -o jsonpath ='{ $. items [*]. status . addresses [?( @. type =="
+ExternalIP ") ]. address }') poll .dop .io result .dop .io" \
+| sudo tee -a /etc/ hosts
+```
 
 ![alt text](https://github.com/saylaan/DevOps_Containerization_2019/blob/master/T-DOP-600_docker.jpg?raw=true)
